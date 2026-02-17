@@ -2379,20 +2379,8 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5615292833197884169, guid: c5447bc946315884996fb29e33a2492e, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6188603570752074945, guid: c5447bc946315884996fb29e33a2492e, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 41f02d8fe69e3ab42b43447c415a05f7, type: 2}
     - target: {fileID: 6604075806347740091, guid: c5447bc946315884996fb29e33a2492e, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6604075806347740091, guid: c5447bc946315884996fb29e33a2492e, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7350591914308856196, guid: c5447bc946315884996fb29e33a2492e, type: 3}
@@ -2434,10 +2422,6 @@ PrefabInstance:
     - target: {fileID: 7350591914308856196, guid: c5447bc946315884996fb29e33a2492e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8236119177465853308, guid: c5447bc946315884996fb29e33a2492e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

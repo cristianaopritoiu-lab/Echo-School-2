@@ -125,7 +125,7 @@ public class ZombieMovement : MonoBehaviour
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(attackDamage);
-            Debug.Log($"{gameObject.name} bit you!");
+            Debug.Log($"{gameObject.name} bit you! "+ attackDamage);
         }
     }
 }

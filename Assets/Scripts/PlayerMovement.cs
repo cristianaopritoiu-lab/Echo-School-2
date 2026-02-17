@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
         float x = 0;
         float y = 0;
         var keyboard = Keyboard.current;
-        Debug.Log("hey");
         if (keyboard != null)
         {
             if (keyboard.aKey.isPressed) x = -1f;
@@ -35,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateAnimations()
     {
-        Debug.Log(moveInput);
         // 2. Check moveInput to see which one to turn back on
         if (moveInput.magnitude == 0)
         {

@@ -5718,6 +5718,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4771811383278758781, guid: 2e15c0fd085dc204197e4c08bd371066, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6352142982848472707, guid: 2e15c0fd085dc204197e4c08bd371066, type: 3}
       propertyPath: m_IsTrigger
       value: 1

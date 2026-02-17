@@ -1,29 +1,36 @@
 using UnityEngine;
 using TMPro; 
 using System.Collections;
-using System.Collections.Generic;
 
 public class StoryWriter : MonoBehaviour
 {
+    [Header("Referinte UI")]
     public TextMeshProUGUI textDisplay; 
-    [TextArea(3, 10)]
-    public string[] sentences; 
-    public float typingSpeed = 0.05f; 
+    public GameObject nextButton;      
 
-    private int index;
-    private bool isTyping;
+    [Header("Setari Poveste")]
+    [TextArea(3, 10)]
+    public string[] sentences;          
+    public float typingSpeed = 0.05f;   
+
+    private int index = 0;
+    private bool isTyping = false;
 
     void Start()
     {
-        
+        if (textDisplay == null)
+        {
+            Debug.LogError("Lipseste referinta catre TextDisplay pe obiectul " + gameObject.name);
+            return;
+        }
+
         StartCoroutine(TypeSentence());
     }
 
     IEnumerator TypeSentence()
     {
         isTyping = true;
-        textDisplay.text = ""; 
-
+        textDisplay.text = "";
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
@@ -31,12 +38,18 @@ public class StoryWriter : MonoBehaviour
         }
 
         isTyping = false;
+        Debug.Log("Am terminat de scris propozitia: " + index);
     }
 
     public void NextSentence()
     {
-        
-        if (isTyping) return;
+        Debug.Log("Butonul Next a fost apasat fizic!");
+
+        if (isTyping)
+        {
+            Debug.Log("Inca scrie... rabdare!");
+            return;
+        }
 
         if (index < sentences.Length - 1)
         {
@@ -45,7 +58,11 @@ public class StoryWriter : MonoBehaviour
         }
         else
         {
-            textDisplay.text = "At the moment... (Press Go Back)";
+            textDisplay.text = "Sfarsitul calatoriei apocaliptice...";
+            Debug.Log("Gata povestea!");
+
+            if (nextButton != null)
+                nextButton.SetActive(false); 
         }
     }
 }

@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("idle", true);
             anim.SetBool("backWalk", false);
-            anim.SetBool("sideskWalk", false);
+            anim.SetBool("sidesWalk", false);
             anim.SetBool("walkFront", false);
         }
         else if (moveInput.y > 0) // Moving Up
@@ -47,18 +47,18 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("backWalk", true);
             anim.SetBool("walkFront", false);
             anim.SetBool("idle", false);
-            anim.SetBool("sideskWalk", false);
+            anim.SetBool("sidesWalk", false);
         }
         else if (moveInput.y < 0) // Moving Down
         {
             anim.SetBool("walkFront", true);
             anim.SetBool("backWalk", false);
-            anim.SetBool("sideskWalk", false);
+            anim.SetBool("sidesWalk", false);
             anim.SetBool("idle", false);
         }
         else if (moveInput.x != 0) // Moving Left or Right
         {
-            anim.SetBool("sideskWalk", true);
+            anim.SetBool("sidesWalk", true);
             anim.SetBool("backWalk", false);
             anim.SetBool("idle", false);
             anim.SetBool("walkFront", false);

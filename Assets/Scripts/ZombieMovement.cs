@@ -99,7 +99,7 @@ public class ZombieMovement : MonoBehaviour
             else
             {
                 // Horizontal movement priority
-                anim.SetBool("sideskWalk", true);    // Moving Left or Right
+                anim.SetBool("sidesWalk", true);    // Moving Left or Right
                 anim.SetBool("idle", false);
                 anim.SetBool("backWalk", false);
                 anim.SetBool("walkFront", false);

@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf2391c3b716bb49a44d1e71b51b1c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieMovement
-  player: {fileID: 7350591914308856196, guid: c5447bc946315884996fb29e33a2492e, type: 3}
+  player: {fileID: 0}
   range: 10
   stopDist: 1.1
   attackDamage: 10

@@ -69,6 +69,9 @@ public class ZombieMovement : MonoBehaviour
         {
             // Zombie is standing still or reached destination
             anim.SetBool("idle", true);
+            anim.SetBool("backWalk", false);
+            anim.SetBool("walkFront", false);
+            anim.SetBool("sidesWalk", false);
         }
         else
         {
@@ -77,15 +80,29 @@ public class ZombieMovement : MonoBehaviour
             {
                 // Vertical movement priority
                 if (velocity.y > 0)
+                {
                     anim.SetBool("backWalk", true);  // Moving Up
+                    anim.SetBool("walkFront", false);
+                    anim.SetBool("sidesWalk", false);
+                    anim.SetBool("idle", false);
+                }
+
                 else
+                {
                     anim.SetBool("walkFront", true); // Moving Down
+                    anim.SetBool("sidesWalk", false);
+                    anim.SetBool("idle", false);
+                    anim.SetBool("backWalk", false);
+                }
+                   
             }
             else
             {
                 // Horizontal movement priority
                 anim.SetBool("sideskWalk", true);    // Moving Left or Right
-
+                anim.SetBool("idle", false);
+                anim.SetBool("backWalk", false);
+                anim.SetBool("walkFront", false);
                 // 4. Handle Sprite Flipping without breaking your Inspector Scale
                 if (velocity.x > 0.1f)
                 {

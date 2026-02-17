@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
 
     {
-        SceneManager.LoadScene("idk 1");
+        SceneManager.LoadScene("idk");
     }
 
     public void Story()

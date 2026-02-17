@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class NectarDisplay : MonoBehaviour
+public class NectarTex01 : MonoBehaviour
 {
     public TextMeshProUGUI textMesh;
     public PlayerController player;
@@ -15,7 +15,7 @@ public class NectarDisplay : MonoBehaviour
     {
         if (player != null)
         {
-            textMesh.text = "NECTAR: " + player.nectarCollected + " / " + nectarTarget;
+            textMesh.text = player.nectarCollected + " / " + nectarTarget;
 
             if (player.nectarCollected >= nectarTarget)
             {

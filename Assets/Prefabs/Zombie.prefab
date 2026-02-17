@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fdc1aff8782c7479f112fe8adddeb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieController
-  health: 250
+  health: 150
   damage: 10
   attackSpeed: 1
   nectarDropAmount: 2

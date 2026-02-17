@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public int health = 100;
     public int nectarCollected = 0;
     public int damage = 40;
-    [SerializeField] int maxHealth = 100;
+    public int maxHealth = 100;
     [Header("Spawn Settings")]
     public float fireOffsetDistance = 0.5f;
     [Header("Shooting Settings")]
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        if (health <= 0) SceneManager.LoadScene("Menu");
+        if (health <= 0) SceneManager.LoadScene("Lose");
     }
     private void Start()
     {

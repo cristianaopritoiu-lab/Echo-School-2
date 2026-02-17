@@ -47,7 +47,7 @@ public class StoryWriter : MonoBehaviour
 
         if (isTyping)
         {
-            Debug.Log("Inca scrie... rabdare!");
+            Debug.Log("Still writing");
             return;
         }
 
@@ -58,8 +58,8 @@ public class StoryWriter : MonoBehaviour
         }
         else
         {
-            textDisplay.text = "Sfarsitul calatoriei apocaliptice...";
-            Debug.Log("Gata povestea!");
+            textDisplay.text = "Press on Go Back...";
+            Debug.Log("Done");
 
             if (nextButton != null)
                 nextButton.SetActive(false); 

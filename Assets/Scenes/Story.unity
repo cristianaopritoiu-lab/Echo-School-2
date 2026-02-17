@@ -1663,6 +1663,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1709660731}
+        m_TargetAssemblyTypeName: SimpleStorySwap, Assembly-CSharp
+        m_MethodName: NextSlide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1181433425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,7 +2101,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1591280464
 Transform:
   m_ObjectHideFlags: 0
@@ -2352,6 +2364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1709660729}
   - component: {fileID: 1709660730}
+  - component: {fileID: 1709660731}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -2406,6 +2419,22 @@ MonoBehaviour:
     Thornscratchers in order to collect nectar, discovered within them during the
     Battle for Leafeon, to synthesize an antidote for her little sister.
   typingSpeed: 0.05
+--- !u!114 &1709660731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709660728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9520594bc4da8d4f94aacb87a055a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleStorySwap
+  slides:
+  - {fileID: 1978586633}
+  - {fileID: 1591280463}
+  - {fileID: 2018945294}
 --- !u!1 &1831187680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,7 +2751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2018945295
 Transform:
   m_ObjectHideFlags: 0

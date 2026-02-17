@@ -1,15 +1,16 @@
 using UnityEngine;
-using UnityEngine.AI; // OBLIGATORIU pentru NavMeshAgent
+using UnityEngine.AI;
 
 public class ZombieMovement : MonoBehaviour
 {
     [Header("Referinte")]
     public Transform player;
     private NavMeshAgent agent;
-
+    private Animator anim; // Added Animator reference
+    private Vector3 baseScale;
     [Header("Setari Navigatie")]
     public float range = 10f;
-    public float stopDist = 1.1f; 
+    public float stopDist = 1.1f;
 
     [Header("Setari Atac")]
     public int attackDamage = 10;
@@ -18,13 +19,22 @@ public class ZombieMovement : MonoBehaviour
 
     void Start()
     {
+        baseScale = transform.localScale;
         agent = GetComponent<NavMeshAgent>();
-        player = FindAnyObjectByType<PlayerController>().GetComponent<Transform>();
+        anim = GetComponent<Animator>(); // Initialize Animator
+
+        // Find player if not assigned
+        if (player == null)
+        {
+            var pc = FindFirstObjectByType<PlayerController>();
+            if (pc != null) player = pc.transform;
+        }
+
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-
         agent.stoppingDistance = stopDist;
     }
+
     void Update()
     {
         if (player == null) return;
@@ -36,8 +46,6 @@ public class ZombieMovement : MonoBehaviour
             agent.isStopped = false;
             agent.SetDestination(player.position);
 
-            // Logic check: Are we close enough AND is the timer ready?
-            // We check Time.time HERE before even calling the function
             if (dist <= (agent.stoppingDistance + 0.3f) && Time.time >= nextAttackTime)
             {
                 Attack();
@@ -48,31 +56,59 @@ public class ZombieMovement : MonoBehaviour
             agent.isStopped = true;
         }
 
-        RotateSprite();
+        UpdateAnimations(); // Logic for switching sprites
+    }
+
+    void UpdateAnimations()
+    {
+        // 1. Get current movement velocity from the NavMeshAgent
+        Vector2 velocity = agent.velocity;
+       
+        // 3. Determine which animation to play based on velocity
+        if (velocity.magnitude < 0.1f)
+        {
+            // Zombie is standing still or reached destination
+            anim.SetBool("idle", true);
+        }
+        else
+        {
+            // Check if movement is primarily Vertical (Up/Down) or Horizontal (Left/Right)
+            if (Mathf.Abs(velocity.y) > Mathf.Abs(velocity.x))
+            {
+                // Vertical movement priority
+                if (velocity.y > 0)
+                    anim.SetBool("backWalk", true);  // Moving Up
+                else
+                    anim.SetBool("walkFront", true); // Moving Down
+            }
+            else
+            {
+                // Horizontal movement priority
+                anim.SetBool("sideskWalk", true);    // Moving Left or Right
+
+                // 4. Handle Sprite Flipping without breaking your Inspector Scale
+                if (velocity.x > 0.1f)
+                {
+                    // Face Right: Use original scale
+                    transform.localScale = new Vector3(baseScale.x, baseScale.y, baseScale.z);
+                }
+                else if (velocity.x < -0.1f)
+                {
+                    // Face Left: Flip only the X axis of your original scale
+                    transform.localScale = new Vector3(-baseScale.x, baseScale.y, baseScale.z);
+                }
+            }
+        }
     }
 
     void Attack()
     {
-        // 1. Reset timer IMMEDIATELY
         nextAttackTime = Time.time + attackRate;
-
-        // 2. Try to damage the player
         PlayerController playerHealth = player.GetComponent<PlayerController>();
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(attackDamage);
-            // This will tell us which specific zombie is the killer
-            Debug.Log($"{gameObject.name} bit you! Next attack at: {nextAttackTime}");
+            Debug.Log($"{gameObject.name} bit you!");
         }
-    }
-
-
-    void RotateSprite()
-    {
-       
-        if (agent.velocity.x > 0.1f)
-            transform.localScale = new Vector3(1, 1, 1);
-        else if (agent.velocity.x < -0.1f)
-            transform.localScale = new Vector3(-1, 1, 1);
     }
 }

@@ -2983,13 +2983,14 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1536987817}
   - {fileID: 608905061}
   - {fileID: 184150342}
-  - {fileID: 2006591299}
   - {fileID: 1957257742}
   - {fileID: 1216984447}
-  - {fileID: 560747739}
   - {fileID: 256865002}
+  - {fileID: 2006591299}
+  - {fileID: 560747739}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5392,20 +5393,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536987813}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 748994061}
   - {fileID: 1696126022}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 599899057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1569395065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6091,22 +6092,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 80162546}
-    - target: {fileID: 1099486041776116454, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LeaveShopButton
-      objectReference: {fileID: 0}
     - target: {fileID: 4973435821643172425, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 80162546}
-    - target: {fileID: 4973435821643172425, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyHealth
-      objectReference: {fileID: 0}
-    - target: {fileID: 6862200200982027221, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.8992386
-      objectReference: {fileID: 0}
     - target: {fileID: 6873234363697951010, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
       propertyPath: m_Name
       value: ShopMenu
@@ -6115,10 +6104,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 80162546}
-    - target: {fileID: 6874518500276259017, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyDamage
-      objectReference: {fileID: 0}
     - target: {fileID: 7167051265188696963, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6924,7 +6909,6 @@ SceneRoots:
   - {fileID: 332272816}
   - {fileID: 758861031}
   - {fileID: 80162547}
-  - {fileID: 1536987817}
   - {fileID: 518714367}
   - {fileID: 599899057}
   - {fileID: 365216470}

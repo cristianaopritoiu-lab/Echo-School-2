@@ -109,7 +109,8 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   dialogue:
-  - Hi
+  - I am feeling sick. Go find me some nectar, the zombies should have plenty on
+    them.
   wordSpeed: 0.05
   playerIsClose: 0
 --- !u!61 &1318130589811532488

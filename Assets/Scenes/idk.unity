@@ -4718,7 +4718,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 8.8125, y: 8.609375}
+  m_Size: {x: 8.8125, y: 4.609375}
   m_EdgeRadius: 0
 --- !u!212 &1225233028
 SpriteRenderer:
@@ -6181,11 +6181,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7167051265188696963, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.7943726
+      value: 5.7944336
       objectReference: {fileID: 0}
     - target: {fileID: 7167051265188696963, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.6953735
+      value: -3.6953125
       objectReference: {fileID: 0}
     - target: {fileID: 7167051265188696963, guid: 77038d91218b38c4a9c6d92ff022b305, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

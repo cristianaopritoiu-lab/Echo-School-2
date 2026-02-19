@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public Transform firePoint;
     public float fireRate = 0.5f;
-
+    AudioSource audioSource;
     private float nextFireTime = 0f;
     private Vector2 lastMovementDirection = Vector2.right; // Default shooting direction
 
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -66,5 +67,6 @@ public class PlayerController : MonoBehaviour
 
         // 3. Spawn at the NEW position
         Instantiate(projectilePrefab, spawnPosition, rotation);
+        audioSource.Play();
     }
 }

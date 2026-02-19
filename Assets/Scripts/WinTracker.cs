@@ -84,7 +84,7 @@ public class WinTracker : MonoBehaviour
 
         // 2. Calculate the "Day Bonus"
         // Day 1 = 0 bonus. Day 2 = 50 bonus. Day 3 = 100 bonus.
-        int healthBonus = (currentDay - 1) * 50;
+        int healthBonus = (currentDay - 1) * 75;
 
         // 3. Spawn and Buff Zombies
         foreach (Vector3 spawnPos in zombieSpawnPositions)

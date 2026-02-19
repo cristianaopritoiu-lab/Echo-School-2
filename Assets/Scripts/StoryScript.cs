@@ -45,11 +45,11 @@ public class StoryWriter : MonoBehaviour
     {
         Debug.Log("Butonul Next a fost apasat fizic!");
 
-        if (isTyping)
-        {
-            Debug.Log("Still writing");
-            return;
-        }
+        //if (isTyping)
+       // {
+        //    Debug.Log("Still writing");
+         //   return;
+       // }
 
         if (index < sentences.Length - 1)
         {
@@ -58,7 +58,7 @@ public class StoryWriter : MonoBehaviour
         }
         else
         {
-            textDisplay.text = "Press on Go Back...";
+            textDisplay.text = "Press on Go Back... (wasd front, back, left, right;  space and face the enemy for attack;  press E to talk)";
             Debug.Log("Done");
 
             if (nextButton != null)

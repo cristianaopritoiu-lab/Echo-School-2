@@ -1,20 +1,21 @@
 using UnityEngine;
-using TMPro; 
+using TMPro;
 using System.Collections;
 
 public class StoryWriter : MonoBehaviour
 {
     [Header("Referinte UI")]
-    public TextMeshProUGUI textDisplay; 
-    public GameObject nextButton;      
+    public TextMeshProUGUI textDisplay;
+    public GameObject nextButton;
 
     [Header("Setari Poveste")]
     [TextArea(3, 10)]
-    public string[] sentences;          
-    public float typingSpeed = 0.05f;   
+    public string[] sentences;
+    public float typingSpeed = 0.05f;
 
     private int index = 0;
     private bool isTyping = false;
+    private Coroutine typingCoroutine; 
 
     void Start()
     {
@@ -24,13 +25,14 @@ public class StoryWriter : MonoBehaviour
             return;
         }
 
-        StartCoroutine(TypeSentence());
+        typingCoroutine = StartCoroutine(TypeSentence());
     }
 
     IEnumerator TypeSentence()
     {
         isTyping = true;
         textDisplay.text = "";
+
         foreach (char letter in sentences[index].ToCharArray())
         {
             textDisplay.text += letter;
@@ -38,31 +40,29 @@ public class StoryWriter : MonoBehaviour
         }
 
         isTyping = false;
-        Debug.Log("Am terminat de scris propozitia: " + index);
     }
 
     public void NextSentence()
     {
-        Debug.Log("Butonul Next a fost apasat fizic!");
-
-        //if (isTyping)
-       // {
-        //    Debug.Log("Still writing");
-         //   return;
-       // }
+        
+        if (isTyping)
+        {
+            StopCoroutine(typingCoroutine); 
+            textDisplay.text = sentences[index]; 
+            isTyping = false;
+            return; 
+        }
 
         if (index < sentences.Length - 1)
         {
             index++;
-            StartCoroutine(TypeSentence());
+            typingCoroutine = StartCoroutine(TypeSentence());
         }
         else
         {
-            textDisplay.text = "Press on Go Back... (wasd front, back, left, right;  space and face the enemy for attack;  press E to talk)";
-            Debug.Log("Done");
-
+            textDisplay.text = "Press on Go Back... (wasd front, back, left, right; space and face the enemy for attack; press E to talk)";
             if (nextButton != null)
-                nextButton.SetActive(false); 
+                nextButton.SetActive(false);
         }
     }
 }

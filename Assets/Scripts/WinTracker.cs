@@ -110,7 +110,7 @@ public class WinTracker : MonoBehaviour
         if (player.nectarCollected >= 2)
         {
             player.nectarCollected -= 2;
-            player.maxHealth += 10;
+            player.maxHealth += 20;
         }
     }
 

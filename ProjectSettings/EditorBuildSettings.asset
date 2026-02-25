@@ -26,6 +26,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: f828408fccc1279468adc968e39e92e7
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: e9786598ef7ae80419a18a1181c74861
   m_configObjects:
+    com.unity.adaptivePerformance.basic.provider_settings: {fileID: 11400000, guid: 026779a1b9207f648b4d6afd1a19ad76, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: cf82a634b9502e54481684a617a17d9c, type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: c113590b7ea266941afe2ca9f5b3ffd2, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
